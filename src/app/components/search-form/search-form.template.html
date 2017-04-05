@@ -1,0 +1,21 @@
+<div layout="column" layout-padding class="form">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+          Search Form  
+        </div>
+    </md-toolbar>
+    <md-content layout="row" class="md-whiteframe-2dp" layout-padding>
+        <md-input-container class="md-block">
+            <label> Search Gif: </label>
+            <input type="text" ng-model="$ctrl.searchText"/>
+        </md-input-container>       
+        <md-button class="md-raised md-primary" ng-click="$ctrl.searchByName()" style="height:15px; padding-top:0px">
+                Search
+        </md-button>
+    </md-content>
+    <md-content>
+        <span ng-repeat="result in $ctrl.searchResults">   
+            <img ng-src="{{result.images.downsized_medium.url}}" />
+        </span>
+    </md-content>
+</div>
